@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.ttappdemo.dao.PermissionMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zr.ttappdemo.model.entity.Permission">
+        <id column="permission_id" property="permissionId" />
+        <result column="permission_name" property="permissionName" />
+        <result column="url" property="url" />
+        <result column="mark" property="mark" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+        <result column="permission_status" property="permissionStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        permission_id, permission_name, url, mark, created_at, updated_at, deleted, permission_status
+    </sql>
+
+</mapper>

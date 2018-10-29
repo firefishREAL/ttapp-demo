@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.ttappdemo.dao.SkuMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zr.ttappdemo.model.entity.Sku">
+        <id column="sku_id" property="skuId" />
+        <result column="sku_type" property="skuType" />
+        <result column="product_id" property="productId" />
+        <result column="price" property="price" />
+        <result column="reserve" property="reserve" />
+        <result column="sales_volume" property="salesVolume" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sku_id, sku_type, product_id, price, reserve, sales_volume, created_at, updated_at, deleted
+    </sql>
+
+</mapper>

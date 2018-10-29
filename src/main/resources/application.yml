@@ -1,0 +1,9 @@
+#公共配置项
+spring:
+  profiles:
+    active: dev
+# 404 交给异常处理器处理
+  mvc:
+    throw-exception-if-no-handler-found: false
+  resources:
+    add-mappings: true

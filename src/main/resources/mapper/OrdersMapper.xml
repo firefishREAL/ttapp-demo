@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.ttappdemo.dao.OrdersMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zr.ttappdemo.model.entity.Orders">
+        <id column="order_id" property="orderId" />
+        <result column="order_no" property="orderNo" />
+        <result column="product_id" property="productId" />
+        <result column="product_title" property="productTitle" />
+        <result column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="order_status" property="orderStatus" />
+        <result column="payment_at" property="paymentAt" />
+        <result column="payment_status" property="paymentStatus" />
+        <result column="payment_price" property="paymentPrice" />
+        <result column="payment_type" property="paymentType" />
+        <result column="product_price" property="productPrice" />
+        <result column="offer_amount" property="offerAmount" />
+        <result column="real_payment" property="realPayment" />
+        <result column="order_type" property="orderType" />
+        <result column="seller_id" property="sellerId" />
+        <result column="seller_name" property="sellerName" />
+        <result column="started_at" property="startedAt" />
+        <result column="end_at" property="endAt" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        order_id, order_no, product_id, product_title, user_id, user_name, order_status, payment_at, payment_status, payment_price, payment_type, product_price, offer_amount, real_payment, order_type, seller_id, seller_name, started_at, end_at, created_at, updated_at, deleted
+    </sql>
+
+</mapper>

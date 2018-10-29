@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.ttappdemo.dao.UserMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zr.ttappdemo.model.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="login_name" property="loginName" />
+        <result column="password" property="password" />
+        <result column="nick_name" property="nickName" />
+        <result column="gender" property="gender" />
+        <result column="birthday" property="birthday" />
+        <result column="age" property="age" />
+        <result column="phone" property="phone" />
+        <result column="icon" property="icon" />
+        <result column="description" property="description" />
+        <result column="user_status" property="userStatus" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+        <result column="province_id" property="provinceId" />
+        <result column="city_id" property="cityId" />
+        <result column="referee" property="referee" />
+        <result column="labels" property="labels" />
+        <result column="user_score" property="userScore" />
+        <result column="level" property="level" />
+        <result column="real_name" property="realName" />
+        <result column="height" property="height" />
+        <result column="weight" property="weight" />
+        <result column="member_id" property="memberId" />
+        <result column="member_updated_at" property="memberUpdatedAt" />
+        <result column="user_token" property="userToken" />
+        <result column="deleted" property="deleted" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="created_at" property="createdAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, login_name, password, nick_name, gender, birthday, age, phone, icon, description, user_status, longitude, latitude, province_id, city_id, referee, labels, user_score, level, real_name, height, weight, member_id, member_updated_at, user_token, deleted, updated_at, created_at
+    </sql>
+
+</mapper>

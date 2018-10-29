@@ -1,0 +1,49 @@
+# 开发环境配置
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      validation-query: "SELECT 1" #验证连接是否可用，使用的SQL语句
+
+server:
+  port: 8090
+  servlet:
+    context-path: /
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true #开启驼峰时命名
+    aggressive-lazy-loading: true #懒加载的对象可能被任何懒属性全部加载，否则，每个属性都按需加载。需要和 lazyLoadingEnabled 一起使用
+    auto-mapping-behavior: PARTIAL #MyBatis 自动映射策略 NONE：不启用自动映射，PARTIAL：只对非嵌套的 resultMap 进行自动映射，FULL：对所有的 resultMap 都进行自动映射
+    auto-mapping-unknown-column-behavior: failing #MyBatis 自动映射时未知列或未知属性处理策略 NONE：不做任何处理 (默认值),WARNING：以日志的形式打印相关警告信息,FAILING：当作映射失败处理，并抛出异常和详细信息
+    cache-enabled: true #全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存
+    call-setters-on-nulls: false #指定当结果集中值为 null 的时候是否调用映射对象的 Setter（Map 对象时为 put）方法
+    # configuration-factory: null #指定一个提供 Configuration 实例的工厂类。该工厂生产的实例将用来加载已经被反序列化对象的懒加载属性值，其必须包含一个签名方法static Configuration getConfiguration()
+
+  #全局策略配置
+  global-config:
+    refresh: true #是否自动刷新 Mapper 对应的 XML 文件，默认不自动刷新。如果配置了该属性，Mapper 对应的 XML 文件会自动刷新，更改 XML 文件后，无需再次重启工程，由此节省大量时间。
+    sql-parser-cache: false #是否缓存 Sql 解析，默认不缓存。
+    # sql-session-factory: null #缓存当前 Configuration 的 SqlSessionFactory。
+    #MyBatis-Plus 全局策略中的 DB 策略配置
+    db-config:
+      capital-mode: false #是否开启大写命名，默认不开启
+      column-like: true #根据 entity 自动生成的 where 条件中,String 类型字段 是否使用 LIKE
+      db-type: mysql #数据库类型,默认值为未知的数据库类型
+      id-type: auto #全局默认主键类型
+      logic-delete-value: 1 #逻辑已删除值
+      logic-not-delete-value: 0 #逻辑未删除
+      # table-prefix: #表名前缀
+
+
+  #config-location: classpath:mybatis-config.xml #单独的 MyBatis 配置
+  mapper-locations: classpath:mappr/*.xml #自定义的MyBatis Mapper 所对应的 XML 文件位置
+
+#spring security oauth2 相关配置
+security:
+  oauth2:
+    client:
+      client-id: ttApp
+      client-secret: ttApp

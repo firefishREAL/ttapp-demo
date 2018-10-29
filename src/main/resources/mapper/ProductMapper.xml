@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zr.ttappdemo.dao.ProductMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zr.ttappdemo.model.entity.Product">
+        <id column="product_id" property="productId" />
+        <result column="title" property="title" />
+        <result column="categories" property="categories" />
+        <result column="product_type" property="productType" />
+        <result column="product_status" property="productStatus" />
+        <result column="rules" property="rules" />
+        <result column="started_at" property="startedAt" />
+        <result column="end_at" property="endAt" />
+        <result column="area" property="area" />
+        <result column="remark" property="remark" />
+        <result column="price" property="price" />
+        <result column="total_price" property="totalPrice" />
+        <result column="total" property="total" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        product_id, title, categories, product_type, product_status, rules, started_at, end_at, area, remark, price, total_price, total, longitude, latitude, created_at, updated_at, deleted
+    </sql>
+
+</mapper>
